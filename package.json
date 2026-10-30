@@ -1,6 +1,6 @@
 {
   "name": "@pitchmentor/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official MCP server (stdio) for the Pitch Mentor API: gives AI assistants one tool per API operation.",
   "type": "module",
   "bin": {
@@ -16,12 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pitchmentor/sdk.git",
-    "directory": "mcp"
+    "url": "git+https://github.com/pitchmentor/pitchmentor-mcp.git"
   },
   "homepage": "https://pitchmentor.net/docs",
   "bugs": {
-    "url": "https://github.com/pitchmentor/sdk/issues"
+    "url": "https://github.com/pitchmentor/pitchmentor-mcp/issues"
   },
   "engines": {
     "node": ">=20"
@@ -43,5 +42,9 @@
     "model-context-protocol",
     "ai-agent"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^6.0.3"
+  }
 }

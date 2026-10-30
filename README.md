@@ -1,5 +1,7 @@
 # @pitchmentor/mcp
 
+[![npm](https://img.shields.io/npm/v/@pitchmentor/mcp?logo=npm&color=cb3837)](https://www.npmjs.com/package/@pitchmentor/mcp) [![CI](https://github.com/pitchmentor/pitchmentor-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/pitchmentor/pitchmentor-mcp/actions/workflows/ci.yml) [![MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Official [Model Context Protocol](https://modelcontextprotocol.io) server (stdio) for the
 [Pitch Mentor](https://pitchmentor.net) API, built on [`@pitchmentor/sdk`](https://www.npmjs.com/package/@pitchmentor/sdk).
 It gives AI assistants (Claude Desktop, Claude Code, Cursor, …) one tool per API operation. Node 20+.
@@ -93,6 +95,26 @@ can explain or adjust.
 The assistant can manage webhook endpoints and deliveries with the tools above. To verify incoming webhook signatures in
 your own server, use `verifyWebhook` from [`@pitchmentor/sdk`](https://www.npmjs.com/package/@pitchmentor/sdk).
 
+## Development
+
+```bash
+npm install
+npm test          # build + node:test
+```
+
+Tools come from the operations of the published [`@pitchmentor/sdk`](https://github.com/pitchmentor/pitchmentor-node), so
+bumping that dependency is all it takes to expose new API operations.
+
+## Releasing
+
+1. Bump `version` in `package.json` (`scripts/check-version.sh X.Y.Z`), merge to `main`.
+2. `git tag vX.Y.Z && git push origin vX.Y.Z`. The [Release workflow](.github/workflows/release.yml) tests, publishes to npm
+   with provenance and creates the GitHub Release.
+
+## Support
+
+[Docs](https://pitchmentor.net/docs) · [Status](https://pitchmentor.net/status) · [Discord](https://discord.gg/SkcxVEJ6wQ). Security issues: see the [security policy](https://github.com/pitchmentor/.github/blob/main/SECURITY.md).
+
 ## License
 
-MIT
+[MIT](LICENSE)
