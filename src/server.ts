@@ -22,7 +22,9 @@ export interface Tool {
 
 /** One tool per API operation; path, query and body fields are flattened into one argument object. */
 export function buildTools(): Tool[] {
-  return (Object.entries(operations) as [OperationId, OperationMeta][]).map(([id, meta]) => {
+  return (Object.entries(operations) as [OperationId, OperationMeta][])
+    .filter(([, meta]) => meta.tag !== "Meta") // the OpenAPI document itself is no use as a tool
+    .map(([id, meta]) => {
     const properties: Record<string, Json> = {};
     const required: string[] = [];
     for (const p of meta.pathParams) {
