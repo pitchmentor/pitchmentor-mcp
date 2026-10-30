@@ -1,23 +1,47 @@
 {
   "name": "@pitchmentor/mcp",
   "version": "0.1.0",
-  "description": "MCP server (stdio) for the Pitch Mentor API.",
+  "description": "Official MCP server (stdio) for the Pitch Mentor API: gives AI assistants one tool per API operation.",
   "type": "module",
   "bin": {
     "pitchmentor-mcp": "dist/main.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pitchmentor/sdk.git",
+    "directory": "mcp"
+  },
+  "homepage": "https://pitchmentor.net/docs",
+  "bugs": {
+    "url": "https://github.com/pitchmentor/sdk/issues"
+  },
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tsc -p tsconfig.json --noEmit",
-    "test": "npm run build && node --test test/*.test.mjs"
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@pitchmentor/sdk": "^0.1.0"
-  }
+  },
+  "keywords": [
+    "pitchmentor",
+    "pitch-mentor",
+    "sales-coaching",
+    "mcp",
+    "model-context-protocol",
+    "ai-agent"
+  ],
+  "license": "MIT"
 }
